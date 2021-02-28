@@ -29,7 +29,7 @@ use Psr\Log\LoggerInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Symfony\Component\Yaml\Yaml;
 
-class Search extends AbstractIndex
+class Search extends AbstractIndex implements SearchInterface
 {
     /** @var SearchQueryProvider */
     private $searchQueryProvider;

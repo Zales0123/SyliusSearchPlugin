@@ -18,7 +18,7 @@ use MonsieurBiz\SyliusSearchPlugin\Exception\MissingLocaleException;
 use MonsieurBiz\SyliusSearchPlugin\Exception\NotSupportedTypeException;
 use MonsieurBiz\SyliusSearchPlugin\Helper\RenderDocumentUrlHelper;
 use MonsieurBiz\SyliusSearchPlugin\Model\Config\GridConfig;
-use MonsieurBiz\SyliusSearchPlugin\Model\Document\Index\Search;
+use MonsieurBiz\SyliusSearchPlugin\Model\Document\Index\SearchInterface;
 use MonsieurBiz\SyliusSearchPlugin\Model\Document\Result;
 use MonsieurBiz\SyliusSearchPlugin\Model\Document\ResultSet;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
@@ -37,7 +37,7 @@ class SearchController extends AbstractController
     /** @var Environment */
     private $templatingEngine;
 
-    /** @var Search */
+    /** @var SearchInterface */
     private $documentSearch;
 
     /** @var ChannelContextInterface */
@@ -57,7 +57,7 @@ class SearchController extends AbstractController
 
     public function __construct(
         Environment $templatingEngine,
-        Search $documentSearch,
+        SearchInterface $documentSearch,
         ChannelContextInterface $channelContext,
         CurrencyContextInterface $currencyContext,
         TaxonContextInterface $taxonContext,
